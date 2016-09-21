@@ -27,7 +27,7 @@ var resolveToComponents = resolveTo('app/components'); // app/components/{glob}
 
 // map of all our paths
 var paths = {
-    scss: resolveToApp('**/*.scss'),
+    scss: resolveToApp('**/[^_]*.scss'),
     css: resolveToApp('**/*.css'),
     html: [
         resolveToApp('**/*.html'),
