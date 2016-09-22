@@ -1,3 +1,4 @@
+@import url(http://fonts.googleapis.com/css?family=Roboto);
 /*
   JSPM doesn't have a Stylus plugin yet and it's LESS plugin
   doesn't support @imports yet, so we're going to use straight css.
@@ -11,8 +12,11 @@
   lightTextColor = #F5F5F5
   darkTextColor = #212121
 */
-
+body {
+  height: 100%;
+  font-family: 'Roboto', sans-serif;
+}
 .app {
-	height: 100%;
-	background-color: #EFEFEF;
+  height: 100%;
+  background-color: #EFEFEF;
 }

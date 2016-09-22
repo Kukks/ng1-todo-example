@@ -6,3 +6,4 @@ jspm_packages
 .settings
 *.log
 dist/
+*.css

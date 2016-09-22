@@ -10,7 +10,8 @@ var gulp = require('gulp'),
     yargs = require('yargs').argv,
     rimraf = require('rimraf'),
     sass = require('gulp-sass'),
-    sourcemaps = require('gulp-sourcemaps');
+    sourcemaps = require('gulp-sourcemaps'),
+    eslint = require('gulp-eslint');
 
 var root = 'client';
 
@@ -27,6 +28,7 @@ var resolveToComponents = resolveTo('app/components'); // app/components/{glob}
 
 // map of all our paths
 var paths = {
+    source: resolveToApp('**/*.js'),
     scss: resolveToApp('**/[^_]*.scss'),
     css: resolveToApp('**/*.css'),
     html: [
@@ -132,5 +134,13 @@ gulp.task('sass', function () {
 gulp.task('sass:watch', function () {
     gulp.watch(paths.scss, ['sass']);
 });
+
+gulp.task('lint', function() {
+    return gulp.src([paths.source])
+        .pipe(eslint())
+        .pipe(eslint.format())
+    // .pipe(eslint.failOnError());
+});
+
 
 gulp.task('default', ['serve'])
