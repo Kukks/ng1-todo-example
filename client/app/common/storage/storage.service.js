@@ -1,4 +1,4 @@
-import {Guid} from "../../utils/guid";
+import {Guid} from '../../utils/guid';
 export class StorageService {
 
   constructor() {
@@ -16,6 +16,10 @@ export class StorageService {
     window.localStorage.getItem(key);
   }
 
+  removeitem(key) {
+    window.localStorage.removeItem(key);
+  }
+
   subscribeToChange(key, handler) {
     const subscriptionId = Guid.generateGuid();
     this.subscriptions[subscriptionId] = ({key: key, handler: handler});
@@ -27,17 +31,17 @@ export class StorageService {
   }
 
   isLocalStorageSupported() {
-    return typeof Storage !== "undefined";
+    return typeof Storage !== 'undefined';
   }
 
   listenToChangeEvent() {
-    window.addEventListener('storage', this.onStorageChanged.bind(this))
+    window.addEventListener('storage', this.onStorageChanged.bind(this));
   }
 
   onStorageChanged(event) {
-    for (let subscription of this.subscriptions) {
-      if (subscription.key === event.key && subscription.handler) {
-        subscription.handler({newValue: event.newValue, oldValue: event.oldValue});
+    for (let subscriptionKey in this.subscriptions) {
+      if (subscriptionKey === event.key && this.subscriptions[subscriptionKey].handler) {
+        this.subscriptions[subscriptionKey].handler({newValue: event.newValue, oldValue: event.oldValue});
       }
     }
   }

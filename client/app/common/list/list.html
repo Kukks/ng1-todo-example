@@ -1,9 +1,0 @@
-<section class="list">
-    <h1 ng-click="vm.editName()" ng-show="!vm.nameEditMode">{{vm.name}}</h1>
-    <form id="new-list-name" ng-submit="submitNameChange()" ng-show="vm.nameEditMode">
-        <input type="text" ng-value="vm.newName"/>
-        <input type="submit" value="submit">
-        <input type="button" ng-click="vm.cancelNameEdit()">
-    </form>
-    <h1>{{vm.listItems.length}}</h1>
-</section>

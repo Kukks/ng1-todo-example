@@ -8,7 +8,10 @@ export class ListDirective {
     this.controller = controller;
     this.restrict = 'E';
     this.controllerAs = 'vm';
-    this.scope = {};
+    this.scope = {
+      listIndex :'=',
+      list: '='
+    };
     this.bindToController = true;
   }
 }

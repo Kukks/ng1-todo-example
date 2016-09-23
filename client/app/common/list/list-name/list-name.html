@@ -1,0 +1,7 @@
+<span ng-click="vm.editName()" ng-show="!vm.nameEditMode">{{vm.name}}</span>
+
+<form ng-submit="vm.submitNameChange()" ng-show="vm.nameEditMode">
+    <input type="text" ng-model="vm.newName"/>
+    <input type="submit" value="submit">
+    <input type="button" ng-click="vm.cancelNameEdit()" ng-show="vm.nameEditMode" value="Cancel">
+</form>

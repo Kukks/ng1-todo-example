@@ -1,6 +1,12 @@
 export default class HomeController {
-  constructor() {
+  constructor(listService) {
     this.name = 'home';
+    this.listService = listService;
+
+
   }
+
+
+
 }
 
