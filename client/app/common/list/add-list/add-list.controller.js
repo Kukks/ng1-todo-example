@@ -10,7 +10,7 @@ export default class AddListController {
 
   createList() {
     if (this.handleValidation()) {
-      let listindex = this.listService.addNewList(new List(this.name));
+      let listIndex = this.listService.addNewList(new List(this.name));
       this.reset();
       if (this.onAdd) {
         this.onAdd({listIndex: listIndex});

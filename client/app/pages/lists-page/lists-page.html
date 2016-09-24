@@ -1,0 +1,13 @@
+<div  ng-repeat="list in vm.listService.lists" >
+    <a ui-sref="list-page({listIndex: list.listIndex})">View List individually</a>
+    <list list="list"></list>
+</div>
+
+
+<a ui-sref="add-list" ng-show="vm.listService.lists.length < 1">
+    No lists yet, maybe add one?
+</a>
+<a ui-sref="add-list-page" ng-show="vm.listService.lists.length > 0">
+    Add another List?
+</a>
+<add-list></add-list>

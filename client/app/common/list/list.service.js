@@ -64,4 +64,15 @@ export class ListService {
     this.lists.splice(this.lists.indexOf(list), 1, list);
     this.storageService.setItem(listIndex, JSON.stringify(list));
   }
+
+  getList(listIndex) {
+    this.getLists();
+    for (let list of this.lists) {
+      if (list.listIndex == listIndex) {
+        return list;
+      }
+    }
+    return null;
+
+  }
 }
