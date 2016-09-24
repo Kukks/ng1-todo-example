@@ -20,6 +20,6 @@ export default class ListNameController {
   submitNameChange() {
     this.name = this.newName;
     this.reset();
-    this.onNameChange();
+    this.onNameChange({name: this.name});
   }
 }

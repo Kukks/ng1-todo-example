@@ -5,8 +5,5 @@ export default class HomeController {
 
 
   }
-
-
-
 }
 

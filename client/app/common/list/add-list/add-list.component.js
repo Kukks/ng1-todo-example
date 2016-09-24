@@ -1,15 +1,14 @@
-import template from './list.html!text';
-import controller from './list.controller';
-import './list.css!';
+import template from './add-list.html!text';
+import controller from './add-list.controller';
+import './add-list.css!';
 
-export class ListDirective {
+export class AddListDirective {
   constructor() {
     this.template = template;
     this.controller = controller;
     this.restrict = 'E';
     this.controllerAs = 'vm';
     this.scope = {
-      list: '='
     };
     this.bindToController = true;
   }

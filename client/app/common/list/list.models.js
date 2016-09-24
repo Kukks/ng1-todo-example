@@ -1,6 +1,7 @@
 export class List {
-  constructor(name, listItems) {
+  constructor(name, listIndex, listItems) {
     this.name = name;
+    this.listIndex = listIndex;
     this.listItems = listItems ? listItems : [];
   }
 }

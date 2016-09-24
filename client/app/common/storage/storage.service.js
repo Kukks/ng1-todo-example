@@ -13,7 +13,7 @@ export class StorageService {
   }
 
   getItem(key) {
-    window.localStorage.getItem(key);
+    return window.localStorage.getItem(key);
   }
 
   removeitem(key) {

@@ -2,7 +2,7 @@
 
     <h1> {{vm.listItems.length}} ({{vm.filteredItems.length}} visible)</h1>
 
-    <list-name name="vm.name" on-name-change="vm.submitListNameChange()"> </list-name><br/>
+    <list-name name="vm.name" on-name-change="vm.submitListNameChange(name)"> </list-name><br/>
     <list-filters filter="vm.enabledFilter" on-filter-change="vm.onFilterChanged(filter)"></list-filters><br/>
     <list-item ng-repeat="listItem in vm.filteredItems"
                item="listItem"
@@ -10,6 +10,8 @@
                on-remove="vm.removeItem(listItem)"></list-item><br/>
 
     <list-item on-submit="vm.onCreateListItem(listItem)"></list-item>
+
+    <input type="button" ng-click="vm.remove()" value="Delete List">
 </section>
 
 
