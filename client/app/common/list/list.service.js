@@ -50,13 +50,13 @@ export class ListService {
     this.storageService.setItem(newIndex, JSON.stringify(list));
     this.storageService.setItem('lists-index', JSON.stringify(this.listsIndex));
     this.subscriptionKeys.push(this.storageService.subscribeToChange(newIndex, this.onListStorageChange.bind(this)));
+    return newIndex;
   }
 
   removeList(list) {
-    this.lists.splice(this.lists.indexOf(list), 1);
-
     this.listsIndex.splice(this.listsIndex.indexOf(list.listIndex), 1);
-    this.storageService.removeItem(listIndex);
+    this.storageService.removeItem(list.listIndex);
+    this.lists.splice(this.lists.indexOf(list), 1);
     this.storageService.setItem('lists-index', JSON.stringify(this.listsIndex));
   }
 

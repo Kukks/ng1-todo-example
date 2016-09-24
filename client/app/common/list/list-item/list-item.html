@@ -1,4 +1,4 @@
-<span ng-click="vm.editName()" ng-show="!vm.nameEditMode">{{vm.item.name}}</span> -- {{vm.item.state | stateToText}}
+<span ng-click="vm.editName()" ng-show="!vm.nameEditMode">{{vm.item.name}}</span><span>{{vm.item.state | stateToText}}</span>
 <input ng-show="vm.item" type="button" ng-click="vm.onRemove({listItem: vm.item})" value="Remove">
 <input ng-if="vm.item" type="button" ng-click="vm.toggleStateChange()"
        value="Set as {{vm.item.state | oppositeState | stateToText}}">

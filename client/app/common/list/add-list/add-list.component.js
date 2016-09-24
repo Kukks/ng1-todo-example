@@ -9,6 +9,7 @@ export class AddListDirective {
     this.restrict = 'E';
     this.controllerAs = 'vm';
     this.scope = {
+      onAdd: '&?'
     };
     this.bindToController = true;
   }

@@ -17,6 +17,6 @@ export default class ListFiltersController {
   }
 
   fireCallback() {
-    this.onFilterChange({ filter: this.filter});
+    this.onFilterChange({filter: this.filter});
   }
 }

@@ -24,7 +24,6 @@ var resolveTo = function (resolvePath) {
 };
 
 var resolveToApp = resolveTo('app'); // app/{glob}
-var resolveToComponents = resolveTo('app/components'); // app/components/{glob}
 
 // map of all our paths
 var paths = {
@@ -35,7 +34,6 @@ var paths = {
     resolveToApp('**/*.html'),
     path.join(root, 'index.html')
   ],
-  blankTemplates: path.join(__dirname, 'generator', 'component/**/*.**'),
   dist: path.join(__dirname, 'dist/')
 };
 
@@ -120,7 +118,6 @@ gulp.task('lint', function () {
   return gulp.src([paths.source])
     .pipe(eslint())
     .pipe(eslint.format())
-  // .pipe(eslint.failOnError());
 });
 
 

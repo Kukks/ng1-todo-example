@@ -16,7 +16,7 @@ export class StorageService {
     return window.localStorage.getItem(key);
   }
 
-  removeitem(key) {
+  removeItem(key) {
     window.localStorage.removeItem(key);
   }
 

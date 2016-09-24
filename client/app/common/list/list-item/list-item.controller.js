@@ -1,7 +1,6 @@
 import {ListItem, ListItemStates} from '../list.models';
 export default class ListItemController {
 
-
   constructor($scope) {
     this.reset();
   }
@@ -24,7 +23,8 @@ export default class ListItemController {
 
   toggleStateChange() {
     if (this.item) {
-      this.item.state = this.item.state === ListItemStates.PENDING ? ListItemStates.COMPLETED : ListItemStates.PENDING;
+      this.item.state = this.item.state === ListItemStates.PENDING ?
+        ListItemStates.COMPLETED : ListItemStates.PENDING;
       this.onSubmit({listItem: this.item});
     }
   }
@@ -37,7 +37,6 @@ export default class ListItemController {
     } else {
       this.onSubmit({listItem: new ListItem(this.newName)});
     }
-    //  delete this.newName;
     this.reset();
   }
 }
