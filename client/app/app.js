@@ -1,14 +1,14 @@
 import angular from 'angular';
 import 'angular-ui-router';
-import Common from './common/common';
-import Components from './components/components';
+import {CommonModule} from './common/index';
+import {PagesModule} from './pages/index';
 import {AppComponent} from './app.component';
 import 'normalize.css';
 
 let appModule = angular.module('app', [
   'ui.router',
-  Common.name,
-  Components.name
+  CommonModule.name,
+  PagesModule.name
 ])
   .directive('app', () => new AppComponent());
 

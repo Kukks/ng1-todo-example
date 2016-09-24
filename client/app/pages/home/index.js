@@ -1,6 +1,9 @@
 import angular from 'angular';
 import 'angular-ui-router';
-import {HomeComponent} from './home.component';
+import controller from './home.controller';
+import template from './home.html!text';
+import './home.css!';
+
 
 export const HomeModule = angular.module('home', [
   'ui.router'
@@ -11,7 +14,10 @@ export const HomeModule = angular.module('home', [
     $stateProvider
       .state('home', {
         url: '/',
-        template: '<home></home>'
-      });
-  })
-  .directive('home', ()=> new HomeComponent());
+        template: template,
+        controller: controller,
+        controllerAs: 'vm',
+        scope: {},
+        bindToController: true
+      })
+  });
