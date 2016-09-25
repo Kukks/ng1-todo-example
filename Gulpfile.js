@@ -1,7 +1,6 @@
 var gulp = require('gulp'),
   path = require('path'),
   jspm = require('jspm'),
-  rename = require('gulp-rename'),
   template = require('gulp-template'),
   htmlreplace = require('gulp-html-replace'),
   ngAnnotate = require('gulp-ng-annotate'),
@@ -10,8 +9,8 @@ var gulp = require('gulp'),
   rimraf = require('rimraf'),
   sass = require('gulp-sass'),
   sourcemaps = require('gulp-sourcemaps'),
-  eslint = require('gulp-eslint');
-
+  eslint = require('gulp-eslint'),
+  minify = require('gulp-minify');
 var root = 'client';
 
 // helper method to resolveToApp paths
@@ -85,7 +84,16 @@ gulp.task('build', ['sass'], function () {
       // Also create a fully annotated minified copy
       return gulp.src(dist)
         .pipe(ngAnnotate())
-        .pipe(rename('app.min.js'))
+        .pipe(debug({title: 'unicorn:'}))
+        .pipe(minify({
+          ext:{
+            src:'.js',
+            min:'.min.js'
+          },
+          mangle: false,
+          compress: true
+
+        }))
         .pipe(gulp.dest(paths.dist))
     })
     .then(function () {

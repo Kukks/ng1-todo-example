@@ -5,18 +5,6 @@ A simple single page Todo list application using Angular 1, JSPM, ES6, SCSS and 
 
 >Tooling is based on https://github.com/AngularClass/NG6-starter with some small modifications to support SCSS and updated angular libs
 
-
-## Testing Setup
-All test are written in ES6 too because why not! We use JSPM to take care of all the logistics of getting those files run in browsers just like our client files. Our setup is:
-
-* Karma
-* JSPM + Babel
-* Mocha
-* Chai
-
-To run test just `npm test` or `karma start`. Read more about testing [below](#testing)
-
-
 # Getting Started
 ## Dependencies
 What you need to run this app:
@@ -44,7 +32,6 @@ NG6 uses Gulp to build and start the dev environment. After you have installed a
 Run `gulp` to start a dev server and watch all files. The port will displayed to you.
 
 ### Gulp tasks
-Without Webpack's required build step, serving is easy and you choose when you are ready to build now
 
 Here's a list of possible Gulp task to run:
 * `serve` (also default `gulp`)
@@ -53,5 +40,3 @@ Here's a list of possible Gulp task to run:
   * bundles our app into a single file with all included dependencies into `dist/`. both minified and unminified included
 * `sass`
   * compiless or sass files into css
-* `component`
-  * builds out boilerplate for a new angular component, [read below](#generating-components) to see how to use this in more detail
