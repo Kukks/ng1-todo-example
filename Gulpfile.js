@@ -84,7 +84,6 @@ gulp.task('build', ['sass'], function () {
       // Also create a fully annotated minified copy
       return gulp.src(dist)
         .pipe(ngAnnotate())
-        .pipe(debug({title: 'unicorn:'}))
         .pipe(minify({
           ext:{
             src:'.js',
