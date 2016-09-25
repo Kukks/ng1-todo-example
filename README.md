@@ -4,6 +4,7 @@
 A simple single page Todo list application using Angular 1, JSPM, ES6, SCSS and gulp.
 
 >Tooling is based on https://github.com/AngularClass/NG6-starter with some small modifications to support SCSS and updated angular libs
+>Live example can be found at https://kukks.github.io/ng1-todo-example/
 
 # Getting Started
 ## Dependencies
