@@ -1608,7 +1608,7 @@ $__System.register('49', ['41', '42', '46', '47', '48'], function (_export) {
       template = _4['default'];
     }, function (_5) {}],
     execute: function () {
-      ListsPageModule = angular.module('lists-page', ['ui.router']).config(function ($stateProvider) {
+      ListsPageModule = angular.module('lists-page', ['ui.router']).config(["$stateProvider", function ($stateProvider) {
         $stateProvider.state('lists-page', {
           url: '/',
           template: template,
@@ -1617,7 +1617,7 @@ $__System.register('49', ['41', '42', '46', '47', '48'], function (_export) {
           scope: {},
           bindToController: true
         });
-      });
+      }]);
 
       _export('ListsPageModule', ListsPageModule);
     }
@@ -1748,7 +1748,7 @@ $__System.register('4f', ['41', '42', '4c', '4d', '4e'], function (_export) {
       template = _d['default'];
     }, function (_e) {}],
     execute: function () {
-      AddListPageModule = angular.module('add-list-page', ['ui.router']).config(function ($stateProvider) {
+      AddListPageModule = angular.module('add-list-page', ['ui.router']).config(["$stateProvider", function ($stateProvider) {
         $stateProvider.state('add-list-page', {
           url: '/add',
           template: template,
@@ -1757,7 +1757,7 @@ $__System.register('4f', ['41', '42', '4c', '4d', '4e'], function (_export) {
           scope: {},
           bindToController: true
         });
-      });
+      }]);
 
       _export('AddListPageModule', AddListPageModule);
     }
@@ -37431,7 +37431,7 @@ $__System.register('55', ['41', '42', '52', '53', '54'], function (_export) {
       template = _4['default'];
     }, function (_5) {}],
     execute: function () {
-      ListPageModule = angular.module('list-page', ['ui.router']).config(function ($stateProvider) {
+      ListPageModule = angular.module('list-page', ['ui.router']).config(["$stateProvider", function ($stateProvider) {
         $stateProvider.state('list-page', {
           url: '/:listIndex',
           template: template,
@@ -37440,7 +37440,7 @@ $__System.register('55', ['41', '42', '52', '53', '54'], function (_export) {
           scope: {},
           bindToController: true
         });
-      });
+      }]);
 
       _export('ListPageModule', ListPageModule);
     }
@@ -37462,9 +37462,9 @@ $__System.register('56', ['41', '49', '55', '4f'], function (_export) {
       AddListPageModule = _f.AddListPageModule;
     }],
     execute: function () {
-      PagesModule = angular.module('app.components', [ListsPageModule.name, AddListPageModule.name, ListPageModule.name]).config(function ($urlRouterProvider) {
+      PagesModule = angular.module('app.components', [ListsPageModule.name, AddListPageModule.name, ListPageModule.name]).config(["$urlRouterProvider", function ($urlRouterProvider) {
         $urlRouterProvider.otherwise('/');
-      });
+      }]);
 
       _export('PagesModule', PagesModule);
     }
