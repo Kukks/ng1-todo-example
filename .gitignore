@@ -2,8 +2,6 @@
 .git
 .idea
 node_modules
-jspm_packages
 .settings
 *.log
 *.css
-dist
