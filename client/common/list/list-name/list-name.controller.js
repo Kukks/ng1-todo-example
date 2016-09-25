@@ -2,7 +2,6 @@ export default class ListNameController {
   constructor($scope) {
     this.$scope = $scope;
     this.reset();
-    this.watch();
   }
 
   reset() {

@@ -3,7 +3,6 @@ var gulp = require('gulp'),
   jspm = require('jspm'),
   rename = require('gulp-rename'),
   template = require('gulp-template'),
-  uglify = require('gulp-uglify'),
   htmlreplace = require('gulp-html-replace'),
   ngAnnotate = require('gulp-ng-annotate'),
   serve = require('browser-sync'),
@@ -81,12 +80,11 @@ gulp.task('build', ['sass'], function () {
   rimraf.sync(path.join(paths.dist, '*'));
   console.log("dadad");
   // Use JSPM to bundle our app
-  return jspm.bundleSFX('\\app\\app', dist, {})
+  return jspm.bundleSFX('app', dist, {})
     .then(function () {
       // Also create a fully annotated minified copy
       return gulp.src(dist)
         .pipe(ngAnnotate())
-        .pipe(uglify())
         .pipe(rename('app.min.js'))
         .pipe(gulp.dest(paths.dist))
     })
