@@ -1,13 +1,18 @@
-<div  ng-repeat="list in vm.listService.lists" >
-    <a ui-sref="list-page({listIndex: list.listIndex})">View List individually</a>
+<div  ng-repeat="list in vm.listService.lists track by $index" class="list-container">
     <list list="list"></list>
+    <a
+            ng-if="$parent.vm.listService.lists.length > 1"
+            ui-sref="list-page({listIndex: list.listIndex})" class="right"><input type="button" value="View List Individually"></a>
 </div>
 
 
-<a ui-sref="add-list" ng-show="vm.listService.lists.length < 1">
-    No lists yet, maybe add one?
+<a ui-sref="add-list-page" ng-show="vm.listService.lists.length < 1">
+    <add-list></add-list>
 </a>
-<a ui-sref="add-list-page" ng-show="vm.listService.lists.length > 0">
-    Add another List?
-</a>
-<add-list></add-list>
+
+<div class="fixed-top">
+    <a ui-sref="add-list-page" ng-show="vm.listService.lists.length > 0">
+        <input type="button" value="Add another List?">
+    </a>
+
+</div>

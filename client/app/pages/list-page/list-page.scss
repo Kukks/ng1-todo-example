@@ -1,0 +1,10 @@
+div[ui-view]{
+
+  text-align: center;
+
+  .page{
+    display: inline-block;
+    min-width: 745px;
+    margin: auto;
+  }
+}

@@ -1,4 +1,4 @@
-import {Guid} from "../../utils/guid";
+import {Guid} from '../../utils/guid';
 export class ListService {
 
   constructor(storageService) {
@@ -10,6 +10,7 @@ export class ListService {
   }
 
   getLists() {
+    this.lists = [];
     const rawListsIndex = this.storageService.getItem('lists-index');
     if (rawListsIndex) {
       this.listsIndex = JSON.parse(rawListsIndex);
@@ -68,11 +69,10 @@ export class ListService {
   getList(listIndex) {
     this.getLists();
     for (let list of this.lists) {
-      if (list.listIndex == listIndex) {
+      if (list.listIndex === listIndex) {
         return list;
       }
     }
     return null;
-
   }
 }

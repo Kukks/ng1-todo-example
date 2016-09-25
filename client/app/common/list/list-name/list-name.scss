@@ -1,0 +1,11 @@
+@import '../../../sass/_vars';
+
+list-name {
+  text-align: center;
+  width: 100%;
+
+  form {
+    padding-top: $default-padding;
+    margin-left: 20%;
+  }
+}

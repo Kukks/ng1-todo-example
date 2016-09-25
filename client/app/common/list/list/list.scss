@@ -1,0 +1,31 @@
+@import '../../../sass/colors';
+
+list {
+  width: 100%;
+  max-width: $biggest-list-width;
+  .list-stats {
+    font-size: $small-font-size;
+    padding-top: $default-padding;
+  }
+  list-item:nth-child(odd):not(.add-list-item) {
+    @extend .lighten-1;
+
+    input[type='button']{
+      @extend .lighten-4;
+    }
+
+  }
+  .add-list-item {
+    margin-top: $default-margin;
+    width: 50%;
+    & + * {
+      margin-top: $default-margin;
+    }
+  }
+
+  .delete-list-btn{
+    min-width:338px;
+  }
+}
+
+

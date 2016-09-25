@@ -1,12 +1,10 @@
 export default class ListController {
 
   constructor(storageService, listService) {
-  //  this.storageService = storageService;
     this.listService = listService;
-    // this.name = this.list.name;
     this.filteredItems = [];
     this.listItems = this.list.listItems;
-    this.currentFilter = null;
+    this.applyFilter(null);
   }
 
   applyFilter(filter) {
@@ -47,7 +45,8 @@ export default class ListController {
   updateListItem(listItem) {
     this.updateFilteredItemsList();
   }
-  removeList(){
+
+  removeList() {
     this.listService.removeList(this.list);
   }
 

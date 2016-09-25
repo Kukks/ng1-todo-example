@@ -1,20 +1,21 @@
 <section class="list">
 
-    <h1> {{vm.listItems.length}} ({{vm.filteredItems.length}} visible)</h1>
 
     <list-name name="vm.list.name" on-name-change="vm.applyNameChange(name)"></list-name>
-    <br/>
-    <list-filters filter="vm.currentFilter" on-filter-change="vm.applyFilter(filter)"></list-filters>
-    <br/>
+    <div class="row-container ">
+        <span class="left list-stats">
+            {{vm.listItems.length}}({{vm.filteredItems.length}} visible)
+        </span>
+        <list-filters class="right " filter="vm.currentFilter" on-filter-change="vm.applyFilter(filter)"></list-filters>
+    </div>
     <list-item ng-repeat="listItem in vm.filteredItems track by $index"
                item="listItem"
                on-submit="vm.updateListItem(listItem)"
                on-remove="vm.removeListItem(listItem)"></list-item>
-    <br/>
 
-    <list-item on-submit="vm.addListItem(listItem)"></list-item>
+    <list-item class="add-list-item" on-submit="vm.addListItem(listItem)"></list-item>
 
-    <input type="button" ng-click="vm.removeList()" value="Delete List">
+    <input type="button" ng-click="vm.removeList()" value="Delete List" class="right delete-list-btn">
 </section>
 
 

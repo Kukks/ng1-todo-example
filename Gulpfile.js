@@ -24,11 +24,11 @@ var resolveTo = function (resolvePath) {
 };
 
 var resolveToApp = resolveTo('app'); // app/{glob}
-
 // map of all our paths
 var paths = {
   source: resolveToApp('**/*.js'),
   scss: resolveToApp('**/[^_]*.scss'),
+  scssWatch: resolveToApp('**/*.scss'),
   css: resolveToApp('**/*.css'),
   html: [
     resolveToApp('**/*.html'),
@@ -79,8 +79,9 @@ gulp.task('serve-dist', function () {
 gulp.task('build', ['sass'], function () {
   var dist = path.join(paths.dist + 'app.js');
   rimraf.sync(path.join(paths.dist, '*'));
+  console.log("dadad");
   // Use JSPM to bundle our app
-  return jspm.bundleSFX(resolveToApp('app'), dist, {})
+  return jspm.bundleSFX('\\app\\app', dist, {})
     .then(function () {
       // Also create a fully annotated minified copy
       return gulp.src(dist)
@@ -111,7 +112,7 @@ gulp.task('sass', function () {
 });
 
 gulp.task('sass:watch', function () {
-  gulp.watch(paths.scss, ['sass']);
+  gulp.watch(paths.scssWatch, ['sass']);
 });
 
 gulp.task('lint', function () {

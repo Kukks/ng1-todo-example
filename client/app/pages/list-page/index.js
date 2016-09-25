@@ -17,4 +17,4 @@ export const ListPageModule = angular.module('list-page', [
         scope: {},
         bindToController: true
       });
-  })
+  });

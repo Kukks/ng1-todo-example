@@ -1,8 +1,6 @@
-import {List} from "../list.models";
-import {Reflection} from "../../../utils/reflection";
+import {List} from '../list.models';
 export default class AddListController {
-  constructor($scope, listService) {
-    this.$scope = $scope;
+  constructor( listService) {
     this.listService = listService;
     this.showValidationMessage = false;
     this.reset();
@@ -19,12 +17,12 @@ export default class AddListController {
   }
 
   handleValidation() {
-    this.showValidationMessage = (!this.name || this.name === "");
+    this.showValidationMessage = (!this.name || this.name === '');
     return !this.showValidationMessage;
   }
 
   reset() {
-    this.name = "";
+    this.name = '';
     this.showValidationMessage = false;
   }
 }

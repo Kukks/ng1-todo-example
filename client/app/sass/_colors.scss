@@ -1,0 +1,74 @@
+@import "vars";
+
+.darken {
+  color: white;
+}
+
+.lighten, .accent {
+  color: black;
+}
+
+.darken-1 {
+  @extend .darken;
+  background-color: $teal-darken-1;
+}
+
+.darken-2 {
+  @extend .darken;
+  background-color: $teal-darken-2;
+}
+
+.darken-3 {
+  @extend .darken;
+  background-color: $teal-darken-3;
+}
+
+.darken-4 {
+  @extend .darken;
+  background-color: $teal-darken-4;
+}
+
+.lighten-1 {
+  @extend .lighten;
+  background-color: $teal-lighten-1;
+}
+
+.lighten-2 {
+  @extend .lighten;
+  background-color: $teal-lighten-2;
+}
+
+.lighten-3 {
+  @extend .lighten;
+  background-color: $teal-lighten-3;
+}
+
+.lighten-4 {
+  @extend .lighten;
+  background-color: $teal-lighten-4;
+}
+
+.accent-1 {
+  @extend .accent;
+  background-color: $teal-accent-1;
+}
+
+.accent-2 {
+  @extend .accent;
+  background-color: $teal-accent-2;
+}
+
+.accent-3 {
+  @extend .accent;
+  background-color: $teal-accent-3;
+}
+
+.accent-4 {
+  @extend .accent;
+  background-color: $teal-accent-4;
+}
+
+.base {
+  color: black;
+  background-color: $teal;
+}

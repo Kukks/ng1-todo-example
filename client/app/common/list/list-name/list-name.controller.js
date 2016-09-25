@@ -1,4 +1,3 @@
-import {Reflection} from "../../../utils/reflection";
 export default class ListNameController {
   constructor($scope) {
     this.$scope = $scope;
@@ -18,7 +17,7 @@ export default class ListNameController {
   }
 
   handleValidation() {
-    this.showValidationMessage = (!this.newName || this.newName === "");
+    this.showValidationMessage = (!this.newName || this.newName === '');
     return !this.showValidationMessage;
   }
 
@@ -34,11 +33,4 @@ export default class ListNameController {
       this.onNameChange({name: this.name});
     }
   }
-
-  watch() {
-    this.$scope.$watch(
-      Reflection.getPropertyName(() => this.newName),
-      () => this.showValidationMessage = false);
-  }
-
 }

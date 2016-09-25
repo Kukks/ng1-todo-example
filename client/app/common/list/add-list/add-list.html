@@ -1,8 +1,8 @@
-Create a new List
-<span ng-show="vm.showValidationMessage">
+<h2>Create a new List</h2>
+<span ng-show="vm.showValidationMessage" class="validation-message">
 Can't create a list with no name
     </span>
 <form ng-submit="vm.createList()">
-    <input type="text" ng-model="vm.name"/>
+    <input type="text" ng-model="vm.name" />
     <input type="submit" value="Create">
 </form>

@@ -6,8 +6,7 @@ import {ListPageModule} from './list-page/index';
 export let PagesModule = angular.module('app.components', [
   ListsPageModule.name,
   AddListPageModule.name,
-  ListPageModule.name,
+  ListPageModule.name
 ]).config(($urlRouterProvider) => {
   $urlRouterProvider.otherwise('/');
-})
-
+});

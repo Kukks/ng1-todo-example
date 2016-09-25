@@ -1,0 +1,49 @@
+@import 'colors';
+
+input {
+  border: none;
+  box-shadow: none;
+  padding: $default-padding;
+  font-size: $medium-font-size;
+  &[type='submit'], &[type='button'] {
+
+    &:nth-child(odd){
+      @extend .lighten-3;
+      &:hover , &.selected{
+        @extend .darken-4;
+      }
+    }
+
+    margin-left: $default-margin;
+    font-weight: 700;
+    @extend .lighten-2;
+
+    & + [type='submit'],  & +[type='button']{
+      margin-left: -$default-margin;
+
+    }
+
+
+    &:hover , &.selected{
+      @extend .darken-2;
+    }
+  }
+
+  &[type='text'] {
+
+    & + [type='submit'], & + &[type='button'] {
+      margin-left: 0px;
+    }
+  }
+
+}
+
+form{
+  width: 100%;
+  margin: $default-margin;
+}
+
+
+.clickable{
+  cursor: pointer;
+}

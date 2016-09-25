@@ -17,5 +17,5 @@ export const ListsPageModule = angular.module('lists-page', [
         controllerAs: 'vm',
         scope: {},
         bindToController: true
-      })
+      });
   });

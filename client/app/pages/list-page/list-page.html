@@ -1,5 +1,8 @@
-<list ng-if="vm.list" list="vm.list"></list>
 
-<a ui-sref="lists-page" >
-    See All Lists?
-</a>
+<list class="page" ng-if="vm.list" list="vm.list"></list>
+
+<div class="fixed-top">
+    <a ui-sref="lists-page" class="">
+        <input type="button" value="See All Lists">
+    </a>
+</div>

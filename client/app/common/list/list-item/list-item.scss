@@ -1,0 +1,20 @@
+@import '../../../sass/_vars';
+
+list-item {
+  width: 100%;
+  span {
+    padding-left: $default-padding;
+    padding-top: $default-padding;
+
+    &.list-item-name {
+      &.Completed {
+        text-decoration: line-through;
+      }
+    }
+  }
+
+  input[type='button']:nth-last-child {
+    margin-right: 0px;
+  }
+
+}

@@ -6,6 +6,7 @@ export default class ListItemController {
   }
 
   reset() {
+    this.showValidationMessage = false;
     this.nameEditMode = this.item ? false : true;
     this.newName = this.item ? this.item.name : 'New Item';
   }
@@ -30,13 +31,21 @@ export default class ListItemController {
   }
 
   submitNameChange() {
-    if (this.item) {
-      this.item.name = this.newName;
-      this.nameEditMode = false;
-      this.onSubmit({listItem: this.item});
-    } else {
-      this.onSubmit({listItem: new ListItem(this.newName)});
+    if (this.handleValidation()) {
+      if (this.item) {
+        this.item.name = this.newName;
+        this.nameEditMode = false;
+        this.onSubmit({listItem: this.item});
+      } else {
+        this.onSubmit({listItem: new ListItem(this.newName)});
+      }
+      this.reset();
     }
-    this.reset();
   }
+
+  handleValidation() {
+    this.showValidationMessage = (!this.newName || this.newName === '');
+    return !this.showValidationMessage;
+  }
+
 }
